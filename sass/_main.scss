@@ -1,0 +1,149 @@
+/*
+ * Some items
+ */
+
+.cb {
+  clear: both;
+}
+
+.nopadding {
+  padding: 0;
+}
+
+.width-full {
+  width: 100% !important;
+}
+
+.underline {
+  width: 65px;
+  border-bottom: 1px solid $gray-light;
+}
+
+.fav-icon {
+  display: inline-block;
+  margin-right: 7px;
+  position: relative;
+}
+
+.fav-icon-fixed {
+  width: 16px;
+  height: 16px;
+}
+
+/*
+ * Main container. Left block.
+ */
+
+#search-col {
+  z-index: 1;
+  box-shadow: 5px -1px 14px 0px $gray-light;
+}
+
+#header {
+  background-color: $gray-dark;
+}
+#header-search {
+  border-radius: 25px;
+}
+
+#site-info {
+  padding: 10px 40px;
+  overflow-x: hidden;
+  & > .fav-icon {
+    bottom: 7px;
+  }
+  & > .name {
+    color: $gray-dark;
+    font-size: 40px;
+    font-weight: 300;
+  }
+  & > .title {
+    color: $gray-light;
+    font-weight: 300;
+    font-size: 16px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+  & > .category {
+    color: $pink;
+    font-weight: 300;
+    font-size: 16px;
+  }
+}
+
+.info-table {
+  padding: 28px;
+  margin-top: 28px;
+  border: 1px solid $gray-light;
+  overflow: hidden;
+  & > .title {
+    float: left;
+    clear: left;
+    color: $gray-light;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  & > .value {
+    float: right;
+    clear: right;
+    font-size: 22px;
+    font-weight: 600;
+    color: $blue-light;
+  }
+}
+
+$info-table-line-height: 35px;
+.info-table > .title, .info-table > .value {
+  line-height: $info-table-line-height;
+}
+
+/* Site similar block */
+
+$title-margin: 10px;
+
+/* site similar buttons */
+$btn-count: 3;
+$btn-width: 29%;
+$btn-margin: (100% - $btn-width * $btn-count) / 4 - 1;
+
+#site-similar {
+  padding: 10px 40px;
+  & > .title {
+    font-size: 26px;
+    font-weight: 300;
+    margin: $title-margin 0;
+  }
+  .underline {
+    margin-bottom: 2 * $title-margin;
+  }
+  .btn {
+    text-align: left;
+    font-weight: 600;
+    border-radius: 6px;
+    box-shadow: 0px 1px 5px -1px $gray-light;
+    padding: 9px 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: $btn-width;
+    margin: 10px $btn-margin;
+    &:nth-child(3n+1) {
+      margin-left: 0;
+    }
+    &:nth-child(3n+3) {
+      margin-right: 0;
+    }
+
+  }
+}
+
+/*
+ * IFrame container. Right block.
+ */
+
+#site-frame {
+  border: none;
+  display: none;
+  width: 100%;
+  height: 100%;
+  //overflow: hidden;
+}

@@ -1,0 +1,9 @@
+<div class="title">Similar Sites</div>
+<div class="underline"></div>
+<div id="site-similar-content">
+	<% _.each(data, function(item) { %>
+	<button type="button" class="btn btn-default" title="<%= item.Url %>" data-url="<%= item.Url %>">
+		<img class="fav-icon fav-icon-fixed" src="<%= item.FavIcon %>"> <%= item.Url %>
+	</button>
+	<% }); %>
+</div>

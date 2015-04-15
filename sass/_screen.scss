@@ -1,0 +1,33 @@
+/* Media queries */
+
+@media (max-width: 768px) {
+  #header {
+    padding: 0 15px;
+  }
+  #header-search-form {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  #site-info {
+    text-align: center;
+  }
+  #site-frame {
+    height: 265px !important;
+  }
+  .btn {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .col {
+    width: 49%;
+    margin-right: 1%;
+    float: left;
+  }
+  #header {
+    padding: 0 35px;
+  }
+}

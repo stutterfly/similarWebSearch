@@ -1,0 +1,12 @@
+<img class="fav-icon fav-icon-fixed" src="<%= data.FavIcon %>">
+<span class="name"><%= data.Domain || 'domain here' %></span>
+<div class="title"><%= data.Title %></div>
+<div class="category">#<%= data.Category %></div>
+<div class="info-table">
+	<div class="title">Global rank</div>
+	<div id="global-rank" class="value"><%= data.GlobalRank %></div>
+	<div class="title">Country rank</div>
+	<div id="country-rank" class="value"><%= data.CountryRank %></div>
+	<div class="title">Category rank</div>
+	<div id="category-rank" class="value"><%= data.CategoryRank %></div>
+</div>
