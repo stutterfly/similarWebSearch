@@ -17,12 +17,17 @@ define([
 
       return url.replace(regex, '');
     },
+    urlValidate: function(url) {
+      var regex = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+
+      return url.match(regex);
+    },
     search: function(url) {
       url = this.urlParse(url);
       this.params.urlForSearch = url;
 
       var onErrorHandler = function(model) {
-        model.trigger('syncError', url);
+        model.trigger('syncError', {url: url, message: 'not found'});
       };
 
       var onSuccessHandler = function(model) {

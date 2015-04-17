@@ -41,10 +41,16 @@ define([
       return this;
     },
     urlSubmit: function() {
-      var val = this.$searchField.val();
+      var val = this.$searchField.val(),
+        isValid = this.model.urlValidate(val);
 
-      this.$searchField.attr('disabled', 'disabled');
-      this.model.search(val);
+      // validate url before fetch
+      if (isValid) {
+        this.$searchField.attr('disabled', 'disabled');
+        this.model.search(val);
+      } else {
+        this.renderError({url: val, message: ' not valid. Please input valid url'});
+      }
 
       return false;
     },
@@ -66,8 +72,8 @@ define([
         $(this).css({'height': searchColHeight, 'display': 'block'});
       });
     },
-    renderError: function(url) {
-      var message = 'site ' + url + ' not found',
+    renderError: function(error) {
+      var message = error.url + ' ' + error.message,
         html = this.templates.error({message: message});
 
       // clear similar block, hide iframe, set active input
