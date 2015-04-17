@@ -12,7 +12,7 @@ grunt
 ```
 
 ## Notes
-Some sites throw error: "Refused to display in a frame because it set 'X-Frame-Options' to 'deny'." for security reason and have no preview.
+Some sites throw an error: "Refused to display in a frame because it set 'X-Frame-Options' to 'deny'." for security reason and have no preview.
 
 ## Technologies and tools:
 
