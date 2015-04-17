@@ -4,7 +4,7 @@ requirejs.config({
   baseUrl: './js',
   urlArgs: "dev=" + (new Date()).getTime(),
   paths: {
-    jquery: '//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min',
+    jquery: '../node_modules/jquery/dist/jquery.min',
     underscore: '../node_modules/underscore/underscore-min',
     backbone: '../node_modules/backbone/backbone-min',
     text: '../node_modules/requirejs-text/text',

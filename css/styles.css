@@ -4912,9 +4912,6 @@ button.close {
 /*
  * Some items
  */
-.cb {
-  clear: both; }
-
 .underline {
   width: 65px;
   border-bottom: 1px solid #8B95A0; }

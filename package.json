@@ -18,7 +18,8 @@
     "requirejs": "^2.1.17",
     "requirejs-text": "^2.0.12",
     "bootstrap-sass": "^3.3.4",
-    "grunt-text-replace": "~0.4.0"
+    "grunt-text-replace": "~0.4.0",
+    "jquery": "^2.1.3"
   },
   "dependencies": {
     "grunt": "~0.4.5",

@@ -2,13 +2,10 @@
 
 ## Installation
 
+Open build\index.html in your browser or input in terminal
+
 ```bash
 npm install
-```
-
-## Start
-
-```bash
 grunt
 ```
 
