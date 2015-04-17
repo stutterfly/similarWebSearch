@@ -28,7 +28,12 @@ define([
     render: function() {
       this.$siteInfo.html(new SiteInfoView({model: this.model}).render().$el);
       this.$siteSimilar.html(new SiteSimilarView({model: this.model}).render().$el);
-      this.$searchCol.removeClass('width-full');
+
+      // remove fullsize for searchbar
+      this.$searchCol
+        .removeClass('col-md-12')
+        .addClass('col-md-6');
+
       this.$searchField.removeAttr('disabled');
       this.siteFrameHeightSet();
       this.siteFrameUrlSet(this.model.params.urlForSearch);
@@ -44,19 +49,19 @@ define([
       return false;
     },
     siteFrameUrlSet: function(url) {
-      /* clear iframe. if new url loading will fail, we have clear iframe. */
+      // clear iframe. if new url loading will fail, we have clear iframe
       this.$siteFrame.attr('src', 'about:blank');
 
-      /* gives iframe time for clearing and then try to load new url. */
+      // gives iframe time for clearing and then try to load new url.
       setTimeout(function() {
         this.$siteFrame.attr('src', 'http://' + url);
       }.bind(this), 1000);
     },
     siteFrameHeightSet: function() {
-      /* get main column height. */
+      // get main column height.
       var searchColHeight = this.$searchCol.css('height');
 
-      /* set iframe height equal main column when iframe loaded. */
+      // set iframe height equal main column when iframe loaded
       this.$siteFrame.load(function() {
         $(this).css({'height': searchColHeight, 'display': 'block'});
       });
@@ -65,10 +70,16 @@ define([
       var message = 'site ' + url + ' not found',
         html = this.templates.error({message: message});
 
+      // clear similar block, hide iframe, set active input
       this.$siteSimilar.html('');
       this.$siteFrame.hide();
-      this.$searchCol.addClass('width-full');
       this.$searchField.removeAttr('disabled');
+
+      // set fullsize for searchbar
+      this.$searchCol
+        .removeClass('col-md-6')
+        .addClass('col-md-12');
+
       this.$siteInfo.html(html);
     }
   });

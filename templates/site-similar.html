@@ -1,9 +1,10 @@
-<div class="title">Similar Sites</div>
-<div class="underline"></div>
-<div id="site-similar-content">
+<div class="title">Similar Sites<div class="underline"></div></div>
+<div id="site-similar-content" class="container-fluid">
 	<% _.each(data, function(item) { %>
-	<button type="button" class="btn btn-default" title="<%= item.Url %>" data-url="<%= item.Url %>">
-		<img class="fav-icon fav-icon-fixed" src="<%= item.FavIcon %>"> <%= item.Url %>
-	</button>
+		<div class="btn-wrapper col-xs-12 col-md-4">
+			<button type="button" class="btn btn-default" title="<%= item.Url %>" data-url="<%= item.Url %>">
+				<img class="fav-icon fav-icon-fixed" src="<%= item.FavIcon %>"> <%= item.Url %>
+			</button>
+		</div>
 	<% }); %>
 </div>

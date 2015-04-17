@@ -12,7 +12,9 @@ define([
         '/rankoverview?userkey=a6fd04d833f2c28ce7c30dc957bf481e&format=json';
     },
     urlParse: function(url) {
+      // remove unnecessary elements from url
       var regex = /http:|https:|www.|\/|\/\/+/g;
+
       return url.replace(regex, '');
     },
     search: function(url) {
