@@ -23,7 +23,7 @@ define([
       this.$siteSimilar = this.$('#site-similar-wrapper');
 
       this.listenTo(this.model, 'sync', this.render);
-      this.listenTo(this.model, 'syncError', this.renderError, this)
+      this.listenTo(this.model, 'syncError', this.renderError, this);
     },
     render: function() {
       this.$siteInfo.html(new SiteInfoView({model: this.model}).render().$el);
